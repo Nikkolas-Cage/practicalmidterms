@@ -7,6 +7,9 @@ https://github.com/Nikkolas-Cage/practicalmidterms/assets/47923060/88090e28-fdb6
 
 This repository contains a Flask application for predicting diabetes based on a trained machine learning model. The machine learning model is trained using a dataset with features such as pregnancies, glucose level, blood pressure, etc. The training and visualization of the model are performed using the `practical.py` script.
 
+### Comparison of Models Used 
+<img width="647" alt="Screenshot 2023-11-10 at 11 22 12 AM" src="https://github.com/Nikkolas-Cage/practicalmidterms/assets/47923060/b13713a2-007a-4da6-8f3c-2bef663ba2f3">
+
 ### Flask App (`app.py`)
 
 #### Setup Instructions:
