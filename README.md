@@ -20,10 +20,3 @@ This repository contains a Flask application for predicting diabetes based on a 
     python app.py
     ```
 
-3. Once the Flask app is running, you can make predictions by sending a POST request to the `/predict` endpoint with input data in JSON format.
-
-    Example using `curl`:
-
-    ```bash
-    curl -X POST -H "Content-Type: application/json" -d '{"Pregnancies": 6, "Glucose": 148, "BloodPressure": 72, "SkinThickness": 35, "Insulin": 0, "BMI": 33.6, "DiabetesPedigreeFunction": 0.627, "Age": 50}' http://localhost:5000/predict
-    ```
