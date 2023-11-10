@@ -23,6 +23,33 @@ This repository contains a Flask application for predicting diabetes based on a 
     python app.py
     ```
 
+#### Running the Flask Application:
+
+To run the Flask application:
+
+1. Ensure you have Python installed on your system.
+
+2. Navigate to the root directory of the project.
+
+3. Run the following commands:
+
+    ```bash
+    pip install -r requirements.txt
+    python app.py
+    ```
+
+4. The Flask app will be running at [http://localhost:5001](http://localhost:5001).
+
+#### Testing:
+
+You can test the Flask app by accessing the sample route at [http://localhost:5001/test](http://localhost:5001/test). It should return a JSON response with the message "Flask app is running successfully!"
+
+```bash
+curl http://localhost:5001/test
+```
+
+Feel free to reach out if you have any questions or encounter any issues.
+
 ### Next.js Frontend (`App.js`)
 
 This repository also includes a Next.js frontend (`App.js`) for interacting with the Flask backend. The frontend provides a user interface for entering patient data and obtaining diabetes predictions from the Flask API.
