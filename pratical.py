@@ -12,9 +12,6 @@ import joblib
 # Load the dataset
 df = pd.read_csv('diabetes.csv')  # Replace 'diabetes_dataset.csv' with your actual file name
 
-# Perform any necessary data pre-processing steps
-# ...
-
 # Split the data into features (X) and target variable (y)
 X = df.drop('Outcome', axis=1)
 y = df['Outcome']
@@ -34,6 +31,8 @@ models = {
     'K-Nearest Neighbors': KNeighborsClassifier()
 }
 
+accuracies = []
+
 for model_name, model in models.items():
     # Train the model
     model.fit(X_train_scaled, y_train)
@@ -44,14 +43,22 @@ for model_name, model in models.items():
     # Test the model on the test set
     y_pred = model.predict(X_test_scaled)
     test_accuracy = accuracy_score(y_test, y_pred)
+    accuracies.append(test_accuracy)
     print(f'{model_name} - Test Accuracy: {test_accuracy}')
+
+# Visualize accuracy for all three models
+plt.bar(models.keys(), accuracies, color=['blue', 'orange', 'green'])
+plt.ylabel('Accuracy')
+plt.title('Test Accuracy of Different Models')
+plt.show()
+print("")
 
 # Visualize feature importance for the Random Forest model
 random_forest_model = models['Random Forest']
 feature_importances = random_forest_model.feature_importances_
 feature_names = X.columns
 sorted_idx = feature_importances.argsort()
-
+print("")
 plt.barh(range(len(sorted_idx)), feature_importances[sorted_idx], align="center")
 plt.yticks(range(len(sorted_idx)), feature_names[sorted_idx])
 plt.xlabel("Feature Importance")
